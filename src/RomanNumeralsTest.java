@@ -67,14 +67,25 @@ public class RomanNumeralsTest {
         assertThat(RomanNumerals.Numeral.D, is(RomanNumerals.nextNumeral(RomanNumerals.Numeral.M)));
     }
 
+    // Begin: Tests in the group below here work.
+
     @Test
-    public void threeThousandNineHundredAndNinetyNine() {
-        assertRomanNumeralEquals("MMMCMXCIX", 3999);
+    public void fourteen() {
+        assertRomanNumeralEquals("XIV", 14);
     }
 
     @Test
     public void oneThousand() {
         assertRomanNumeralEquals("M", 1000);
+    }
+
+    // End: Tests in the group above here work.
+
+    // Begin: Tests in the group below here DON'T work.
+
+    @Test
+    public void fiveHundred() {
+        assertRomanNumeralEquals("D", 500);
     }
 
     @Test
@@ -83,9 +94,11 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void fiveHundred() {
-        assertRomanNumeralEquals("D", 500);
+    public void threeThousandNineHundredAndNinetyNine() {
+        assertRomanNumeralEquals("MMMCMXCIX", 3999);
     }
+
+    // End: Tests in the group above  here DON'T work.
 
     @Test
     public void fourHundred() {
@@ -160,11 +173,6 @@ public class RomanNumeralsTest {
     @Test
     public void ten() {
         assertRomanNumeralEquals("X", 10);
-    }
-
-    @Test
-    public void fourteen() {
-        assertRomanNumeralEquals("XIV", 14);
     }
 
     @Test
